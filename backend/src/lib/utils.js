@@ -4,7 +4,7 @@ export const generateToken = (userId, res) => {
   const { JWT_SECRET } = process.env;
   if (!JWT_SECRET) throw new Error("JWT Screct is not set");
 
-  const token = jwt.sign({ userId }, JWT_SECRET, {
+  const token = jwt.sign({ id: userId }, JWT_SECRET, {
     expiresIn: "7d",
   });
 
