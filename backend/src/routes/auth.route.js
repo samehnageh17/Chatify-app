@@ -1,4 +1,4 @@
-import express from "express";
+import express, { application } from "express";
 import {
   signup,
   login,
@@ -6,7 +6,10 @@ import {
   updateProfile,
 } from "../controllers/auth.controller.js";
 import { protectRoute } from "../middleware/auth.middleware.js";
+import { arcjectProtection } from "../middleware/arcjet.middleware.js";
 const router = express.Router();
+
+router.use(arcjectProtection);
 router.post("/signup", signup);
 
 router.post("/login", login);
