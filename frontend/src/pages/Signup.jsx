@@ -2,7 +2,7 @@ import { MailIcon, MessageCircleIcon, UserIcon, Lock } from "lucide-react";
 import BorderAnimatedContainer from "../components/BorderAnimatedContainer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useAuthStore } from "../store/UseAthueStore";
+import { useAuthStore } from "../store/useAuthStore";
 import { LoaderIcon } from "react-hot-toast";
 
 export default function Signup() {
@@ -105,7 +105,7 @@ export default function Signup() {
             <div className="hidden md:w-1/2 md:flex items-center justify-center p-6 bg-gradient-to-bl from-slate-800/20 to-transparent">
               <div>
                 <img
-                  src="/signup.jpg"
+                  src="/"
                   alt="People using mobile devices"
                   className="w-full h-auto object-contain"
                 />

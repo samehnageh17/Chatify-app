@@ -4,7 +4,7 @@ import ChatPage from "./pages/ChatPage";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import PageLoader from "./pages/PageLoader";
-import { useAuthStore } from "./store/UseAthueStore";
+import { useAuthStore } from "./store/useAuthStore";
 import { useEffect } from "react";
 
 function App() {
