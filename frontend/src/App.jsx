@@ -15,27 +15,27 @@ function App() {
   console.log(authUser, isCheckingAuth);
   if (isCheckingAuth) return <PageLoader />;
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-gray-900 to-blue-900 relative">
-      <div className="absolute top-10 left-10 w-72 h-72 bg-pink-600 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div>
-      <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div>
+    <div className="min-h-screen bg-slate-900 relative flex items-center justify-center p-4 overflow-hidden">
+      {/* DECORATORS - GRID BG & GLOW SHAPES */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]" />
+      <div className="absolute top-0 -left-4 size-96 bg-pink-500 opacity-20 blur-[100px]" />
+      <div className="absolute bottom-0 -right-4 size-96 bg-cyan-500 opacity-20 blur-[100px]" />
 
-      <div className="relative z-10 text-center text-white">
-        <Routes>
-          <Route
-            path="/"
-            element={authUser ? <ChatPage /> : <Navigate to={"login"} />}
-          />
-          <Route
-            path="/login"
-            element={!authUser ? <Login /> : <Navigate to={"/"} />}
-          />
-          <Route
-            path="/signup"
-            element={!authUser ? <Signup /> : <Navigate to={"/"} />}
-          />
-        </Routes>
-        <Toaster />
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={authUser ? <ChatPage /> : <Navigate to={"/login"} />}
+        />
+        <Route
+          path="/login"
+          element={!authUser ? <Login /> : <Navigate to={"/"} />}
+        />
+        <Route
+          path="/signup"
+          element={!authUser ? <Signup /> : <Navigate to={"/"} />}
+        />
+      </Routes>
+      <Toaster />
     </div>
   );
 }
