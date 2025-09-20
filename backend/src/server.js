@@ -7,8 +7,9 @@ import authRouter from "./routes/auth.route.js";
 import messageRouter from "./routes/message.route.js";
 import { connectDB } from "./lib/db.js";
 import { ENV } from "./lib/env.js";
+import { app, server } from "./lib/socket.js";
 dotenv.config();
-const app = express();
+// const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({ origin: ENV.CLIENT_URL, credentials: true }));
@@ -24,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
   });
 }
-app.listen(Port, () => {
+server.listen(Port, () => {
   console.log(`Server running on port ${Port} Successfuly`);
   connectDB();
 });
